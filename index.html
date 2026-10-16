@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot AI | Raj Kumar Nayak</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #07111f;
+  color: #edf6ff;
+  line-height: 1.7;
+}
+
+header {
+  text-align: center;
+  padding: 28px 15px;
+  background: #0c1b31;
+  border-bottom: 2px solid #00d9ff;
+}
+
+header h1 {
+  color: #00d9ff;
+  font-size: 34px;
+}
+
+nav {
+  text-align: center;
+  padding: 14px;
+  background: #10243d;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #00d9ff;
+}
+
+.hero {
+  text-align: center;
+  padding: 55px 20px;
+  background: radial-gradient(circle, #123b65, #07111f 75%);
+}
+
+.robot {
+  font-size: 100px;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-12px); }
+}
+
+.hero h2 {
+  font-size: 34px;
+  color: #00d9ff;
+  margin: 10px 0;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #00d9ff;
+  color: #07111f;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+}
+
+section {
+  max-width: 1100px;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+section h2 {
+  color: #00d9ff;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #10243d;
+  border: 1px solid #1e5277;
+  border-radius: 15px;
+  text-align: center;
+  padding: 24px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #00d9ff;
+}
+
+.card .emoji {
+  font-size: 48px;
+}
+
+.card h3 {
+  color: #00d9ff;
+  margin: 10px;
+}
+
+.info {
+  background: #10243d;
+  border: 1px solid #1e5277;
+  border-radius: 15px;
+  padding: 25px;
+}
+
+.chatbox {
+  max-width: 650px;
+  margin: auto;
+  background: #10243d;
+  border: 1px solid #00d9ff;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+#messages {
+  height: 230px;
+  overflow-y: auto;
+  padding: 12px;
+  background: #07111f;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.msg {
+  padding: 9px 12px;
+  margin: 8px 0;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.bot {
+  background: #183654;
+}
+
+.user {
+  background: #075b73;
+  text-align: right;
+}
+
+.chat-controls {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #00d9ff;
+  background: #07111f;
+  color: white;
+  font-size: 16px;
+}
+
+.chat-controls button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #00d9ff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+footer {
+  background: #0c1b31;
+  text-align: center;
+  padding: 25px;
+  border-top: 2px solid #00d9ff;
+}
+
+@media(max-width: 600px) {
+  header h1 { font-size: 27px; }
+  nav a {
+    display: inline-block;
+    margin: 5px 7px;
+  }
+  .hero h2 { font-size: 27px; }
+  .chat-controls { flex-wrap: wrap; }
+  .chat-controls input { width: 100%; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🤖 ROBOT AI WORLD</h1>
+  <p>Welcome to the Future of Artificial Intelligence</p>
+  <p>Created by Raj Kumar Nayak | Class 9th</p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About AI</a>
+  <a href="#robots">Robots</a>
+  <a href="#chat">AI Chat</a>
+  <a href="#student">Student</a>
+</nav>
+
+<div class="hero" id="home">
+  <div class="robot">🤖</div>
+  <h2>भविष्य की दुनिया में आपका स्वागत है!</h2>
+  <p>
+    Artificial Intelligence और Robotics की दुनिया को जानें।
+    रोबोट इंसानों की मदद करने, काम आसान बनाने और नई तकनीक
+    विकसित करने में उपयोगी हैं।
+  </p>
+  <a href="#robots" class="btn">Explore Robots</a>
+</div>
+
+<section id="about">
+  <h2>🧠 Artificial Intelligence क्या है?</h2>
+  <div class="info">
+    <p>
+      Artificial Intelligence (AI) ऐसी तकनीक है जिसकी मदद से
+      कंप्यूटर कुछ ऐसे काम कर सकते हैं जिनमें सामान्यतः
+      मानवीय बुद्धिमत्ता की जरूरत होती है, जैसे भाषा समझना,
+      तस्वीर पहचानना और सवालों के जवाब देना।
+    </p>
+    <p>
+      AI और रोबोटिक्स का उपयोग शिक्षा, चिकित्सा, खेती,
+      उद्योग और अंतरिक्ष अनुसंधान में किया जाता है।
+    </p>
+  </div>
+</section>
+
+<section id="robots">
+  <h2>⚙️ रोबोट के प्रकार</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">🏭</div>
+      <h3>Industrial Robot</h3>
+      <p>कारखानों में सामान बनाने और दोहराए जाने वाले काम करने में मदद करता है।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🏥</div>
+      <h3>Medical Robot</h3>
+      <p>चिकित्सा में डॉक्टरों की सहायता और कुछ प्रक्रियाओं में उपयोग होता है।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🚀</div>
+      <h3>Space Robot</h3>
+      <p>अंतरिक्ष और दूसरे ग्रहों का अध्ययन करने में मदद करता है।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🏠</div>
+      <h3>Home Robot</h3>
+      <p>घर की सफाई और अन्य रोजमर्रा के कामों में मदद कर सकता है।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">💬</div>
+      <h3>AI Chatbot</h3>
+      <p>लोगों के सवालों का जवाब देने और जानकारी समझाने में मदद करता है।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🌾</div>
+      <h3>Farming Robot</h3>
+      <p>खेती में पौधों की निगरानी और कुछ काम स्वचालित करने में उपयोगी है।</p>
+    </div>
+  </div>
+</section>
+
+<section id="chat">
+  <h2>💬 Mini Robot Chatbot</h2>
+  <p style="text-align:center;margin-bottom:20px">
+    अपने Robot से सवाल पूछें!
+  </p>
+
+  <div class="chatbox">
+    <div id="messages" aria-live="polite">
+      <div class="msg bot">
+        🤖 नमस्ते! मैं आपका Mini Robot हूँ। अपना नाम, AI,
+        रोबोट या सौर ऊर्जा के बारे में पूछें।
+      </div>
+    </div>
+
+    <div class="chat-controls">
+      <input id="question" type="text"
+        placeholder="यहाँ सवाल लिखें..."
+        aria-label="अपना सवाल लिखें">
+      <button onclick="sendMessage()">Send ➤</button>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>🌟 AI के फायदे</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="emoji">⏱️</div>
+      <h3>समय की बचत</h3>
+      <p>कुछ काम तेजी और स्वचालित तरीके से किए जा सकते हैं।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">📚</div>
+      <h3>शिक्षा</h3>
+      <p>AI पढ़ाई के विषय समझने और अभ्यास करने में मदद कर सकता है।</p>
+    </div>
+    <div class="card">
+      <div class="emoji">🔬</div>
+      <h3>नई खोजें</h3>
+      <p>वैज्ञानिकों को डेटा का विश्लेषण करने में सहायता मिल सकती है।</p>
+    </div>
+  </div>
+</section>
+
+<section id="student">
+  <h2>👨‍🎓 Student Information</h2>
+  <div class="info" style="text-align:center">
+    <div style="font-size:55px">🎓</div>
+    <h3>Raj Kumar Nayak</h3>
+    <p>Class: 9th</p>
+    <p>Project: Robot & Artificial Intelligence</p>
+    <p>My Dream: सीखना, बनाना और नई तकनीक विकसित करना!</p>
+  </div>
+</section>
+
+<footer>
+  <h3>🤖 ROBOT AI WORLD</h3>
+  <p>Created by Raj Kumar Nayak | Class 9th</p>
+  <p>Learn Today, Build Tomorrow!</p>
+  <p>© 2026 Student Project</p>
+</footer>
+
+<script>
+function sendMessage() {
+  const input = document.getElementById("question");
+  const messages = document.getElementById("messages");
+  const question = input.value.trim().toLowerCase();
+
+  if (!question) return;
+
+  const userMessage = document.createElement("div");
+  userMessage.className = "msg user";
+  userMessage.textContent = input.value;
+  messages.appendChild(userMessage);
+
+  let reply = "मैं एक छोटा Demo Robot हूँ। AI, रोबोट, पढ़ाई या सौर ऊर्जा के बारे में पूछें।";
+
+  if (question.includes("hello") ||
+      question.includes("नमस्ते") ||
+      question.includes("हेलो")) {
+    reply = "नमस्ते! 🤖 आपका स्वागत है। मैं आपकी कैसे मदद कर सकता हूँ?";
+  } else if (question.includes("नाम") ||
+             question.includes("name")) {
+    reply = "मेरा नाम Mini Robot है। इस वेबसाइट को Raj Kumar Nayak ने बनाया है।";
+  } else if (question.includes("राज") ||
+             question.includes("raj")) {
+    reply = "राज कुमार नायक कक्षा 9वीं के विद्यार्थी हैं।";
+  } else if (question.includes("ai") ||
+             question.includes("एआई")) {
+    reply = "AI का पूरा नाम Artificial Intelligence है। यह मशीनों को बुद्धिमान कार्य करने में मदद करती है।";
+  } else if (question.includes("रोबोट") ||
+             question.includes("robot")) {
+    reply = "रोबोट एक मशीन है जो प्रोग्राम के अनुसार काम कर सकती है। कुछ रोबोट AI का भी उपयोग करते हैं।";
+  } else if (question.includes("सोलर") ||
+             question.includes("solar") ||
+             question.includes("सूर्य")) {
+    reply = "सोलर पैनल सूर्य की रोशनी को बिजली में बदलता है।";
+  } else if (question.includes("भारत") ||
+             question.includes("india")) {
+    reply = "भारत हमारा देश है! तकनीक और विज्ञान से हम देश के विकास में योगदान दे सकते हैं।";
+  } else if (question.includes("धन्यवाद") ||
+             question.includes("thanks")) {
+    reply = "आपका स्वागत है! 😊 सीखते रहिए और नए प्रयोग करते रहिए।";
+  } else if (question.includes("पढ़ाई") ||
+             question.includes("study")) {
+    reply = "रोज थोड़ा पढ़ें, सवाल पूछें और छोटे-छोटे प्रोजेक्ट बनाकर अभ्यास करें!";
+  }
+
+  const botMessage = document.createElement("div");
+  botMessage.className = "msg bot";
+  botMessage.textContent = "🤖 " + reply;
+  messages.appendChild(botMessage);
+
+  messages.scrollTop = messages.scrollHeight;
+  input.value = "";
+  input.focus();
+}
+
+document.getElementById("question").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") sendMessage();
+});
+</script>
+
+</body>
+</html>
